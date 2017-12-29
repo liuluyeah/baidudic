@@ -1,0 +1,310 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="robots" content="all" />
+<meta name="author" content="Zdic.Net" />
+<meta name="Copyright" content="zdic.net CopyRight" />
+<meta name="description" content="汉典,旨在宏扬中华文化" />
+<meta content="中文,汉语,国语,汉语字典,中文字典,汉语词典,词语,成语词典,实用附录,Chinese characters, Chinese dictionary, Chinese-English dictionary, hanzi, zhongwen, hanyu, guoyu" name="keywords" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<title>汉典搜索 zdic.net</title>
+<link rel="stylesheet" rev="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" rev="stylesheet" href="/css/acfy.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/domload.js"></script>
+<script type="text/javascript" src="/js/prototype.js"></script>
+<script type="text/javascript" src="/js/zac.js"></script>
+<style>
+.notice{min-height: 400px; }
+DIV.ssfy {
+	text-align:right;
+	PADDING-RIGHT: 2px;
+	PADDING-LEFT: 2px;
+	PADDING-BOTTOM: 2px;
+	MARGIN: 7px;
+	PADDING-TOP: 10px;
+	FONT-FAMILY: "Lucida Sans Unicode", "Lucida Grande", LucidaGrande, "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size:14px;
+}
+DIV.ssfy A {
+	PADDING-RIGHT: 0.64em;
+	PADDING-LEFT: 0.64em;
+	PADDING-BOTTOM: 0.43em;
+	MARGIN: 2px;
+	COLOR: #fff;
+	PADDING-TOP: 0.5em;
+	BACKGROUND-COLOR: #C47979;
+	TEXT-DECORATION: none
+}
+DIV.ssfy A:hover {
+	PADDING-RIGHT: 0.64em;
+	PADDING-LEFT: 0.64em;
+	PADDING-BOTTOM: 0.43em;
+	MARGIN: 2px;
+	COLOR: #fff;
+	PADDING-TOP: 0.5em;
+	BACKGROUND-COLOR: #de1818
+}
+DIV.ssfy A:active {
+	PADDING-RIGHT: 0.64em;
+	PADDING-LEFT: 0.64em;
+	PADDING-BOTTOM: 0.43em;
+	MARGIN: 2px;
+	COLOR: #fff;
+	PADDING-TOP: 0.5em;
+	BACKGROUND-COLOR: #de1818
+}
+DIV.ssfy SPAN.current {
+	PADDING-RIGHT: 0.64em;
+	PADDING-LEFT: 0.64em;
+	PADDING-BOTTOM: 0.43em;
+	MARGIN: 2px;
+	COLOR: #6d643c;
+	PADDING-TOP: 0.5em;
+	BACKGROUND-COLOR: #f6efcc
+}
+DIV.ssfy SPAN.disabled {
+	DISPLAY: none
+}
+.sslist {
+	clear:both;
+	WIDTH:100%;
+	TEXT-ALIGN: center;
+}
+.sslist ul {
+	list-style:none;
+	MARGIN: 0px;
+	PADDING: 0px;
+	BORDER:0px;
+	width:100%;
+	overflow: hidden;
+}
+.sslist ul li {
+	float: left;
+	position:relative;
+	WIDTH:48%;
+	margin-right:2px;
+	TEXT-ALIGN: left;
+	height: 30px;
+	overflow: hidden;
+	text-indent:18px;
+}
+.sslist li a {
+	font-size: 16px;
+	MARGIN:0;
+	DISPLAY:block;
+	WIDTH:100%;
+	line-height:30px;
+	text-decoration:none;
+	background-image:url(/images/ar.gif);
+	background-repeat:no-repeat;
+	background-position:4px 8px;
+	overflow: hidden;
+}
+.sslist ul li a:hover {
+	text-decoration: none;
+	WIDTH:100%;
+	color: red;
+	background-color:#F4F2EE;
+}
+.chide{display:none}
+</style>
+</HEAD>
+<BODY>
+<DIV id=wrapper>
+<DIV id=sitelogo><img src="/images/logo.gif"></DIV>
+<DIV id=header> </DIV>
+<script language="javascript" src="/js/topmenu.js" type="text/javascript"></script>
+<DIV id=container>
+<DIV id=content>
+<div class="secpan">
+<div class="sec_m">
+<span id="tp1">条目</span><div>|</div>
+<span id="tp2">字典</span><div>|</div>
+<span id="tp3">词典</span><div>|</div>
+<span id="tp4">成语</span><div>|</div>
+<span id="tp5">全站</span>
+</div>
+<form method="post" action="/sousuo/" id="f1" name="f1">
+<div class="tp_c" id="tp_ts1">请直接输入汉字或词语进行查询，支持拼音查询，例："han";"han4";"han yu";"han4 yu3"。</div>
+<div class="tp_c" id="tp_ts2">
+<label><input name="lb_a" type="radio" value="hp" checked>汉字或拼音</label>
+<label><input name="lb_a" type="radio" value="bis">笔顺</label>
+<label><input name="lb_a" type="radio" value="wb86">五笔编码</label>
+<label><input name="lb_a" type="radio" value="cj">仓颉编码</label>
+<label><input name="lb_a" type="radio" value="fc">四角号码</label>
+<label><input name="lb_a" type="radio" value="uno">unicode</label>
+</div>
+<div class="tp_c" id="tp_ts3">
+<label><input name="lb_b" type="radio" value="mh" checked>模糊搜索</label>
+<label><input name="lb_b" type="radio" value="jq">精确搜索</label>
+</div>
+<div class="tp_c" id="tp_ts4">
+<label><input name="lb_c" type="radio" value="mh" checked>模糊搜索</label>
+<label><input name="lb_c" type="radio" value="jq">精确搜索</label>
+</div>
+<input name="tp" id="tp" type="hidden" value="tp1">
+<div class="secpan_qb">
+<DIV class="query">
+<input class="q" id="q" name="q" type="text" value="周族" maxlength="30">
+</DIV>
+<BUTTON class="btn" type="submit"></BUTTON>
+</div>
+</form>
+<div class="tp_c" id="tp_ts5"></div>
+<form name="f2" id="cse-search-box" onsubmit="return g(this)" style="display:none" target="_blank">
+<input name=ie type=hidden value=utf-8>
+<div class="secpan_qb">
+<DIV class="query">
+<input class="q" type="text" name="word" value="周族"/>
+</div>
+<BUTTON class="btn" name="sa" value="搜索" type="submit"></BUTTON>
+</div>
+<input name=tn type=hidden value="bds">
+<input name=cl type=hidden value="3">
+<input name=ct type=hidden>
+<div class="chide">
+<input name=si type=hidden value="www.zdic.net">
+<input name=s type=radio> 互联网
+<input name=s type=radio checked> www.zdic.net
+</div>
+</form>
+<div class="tp_c" id="tp_tx1"><a href="/z/zxjs/">【汉字拆分】</a> | <a href="/z/kxzd/">【康熙字典】</a> | <a href="/z/swjz/">【說文解字】</a> | <a href="/z/jbs/">【字典部首】</a> | <a href="/c/cibs/">【词典部首】</a></div>
+<div class="tp_c" id="tp_tx2"><a href="/z/zxjs/">【汉字拆分】</a> | <a href="/z/kxzd/">【康熙字典】</a> | <a href="/z/swjz/">【說文解字】</a> | <a href="/z/jbs/">【部首索引】</a> | <a href="/z/pyjs/">【拼音索引】</a></div>
+<div class="tp_c" id="tp_tx3"><a href="/c/cibs/">【词典部首】</a> | <a href="/c/cipy/">【词典拼音】</a></div>
+<div class="tp_c" id="tp_tx4"><a href="/c/cybs/">【成语部首】</a> | <a href="/c/cypy/">【成语拼音】</a></div> <div class="tp_c" id="tp_tx5"></div>
+<script type="text/javascript">
+Event.observe(window, 'load', $(function(){
+	var _items,_options;
+	_items = $A($$(".sec_m span"));
+	_options = $A($$(".tp_c"));		
+	$A($$(".sec_m span")).each(
+		function(item){
+			item.removeClassName("menu_gg");
+			Event.observe(item, 'click', 
+			$(function(){
+				var _index,_len;
+				for(_index=0,_len=_items.length; _index<_len; _index++){
+					(_items[_index] == item)?(function(){
+						_items[_index].addClassName("menu_gg");
+						Element.setStyle(_options[_index],{display:'block'});
+						Element.setStyle(_options[_index+5],{display:'block'});
+						$("tp").value = "tp"+(_index+1);
+						Element.setStyle($("f1"),{display:((_index==4)?'none':'block')});
+						Element.setStyle($("cse-search-box"),{display:((_index==4)?'block':'none')});
+					})():(function(){
+						_items[_index].removeClassName("menu_gg");
+						Element.setStyle(_options[_index],{display:'none'});
+						Element.setStyle(_options[_index+5],{display:'none'});
+					})();
+				}
+			})
+			, false);
+		}
+	);
+	
+	$A($$("form .secpan_qb .query input")).each(
+		function(item){
+			Event.observe(item, 'focus', 
+			$(function(){
+				item.select();
+			})
+			,false);
+			Event.observe(item, 'mouseover', 
+			$(function(){
+				item.focus();
+			})
+			,false);
+		}
+	);
+	$A($$("form .btn")).each(
+		function(item){
+			Event.observe(item, 'click', 
+			$(function(){
+				item.blur();
+			})
+			,false);
+		}
+	);
+
+	_items[0].addClassName("menu_gg");
+	Element.setStyle(_options[0],{display:'block'});
+	Element.setStyle(_options[5],{display:'block'});
+	
+	$("tp").value = "tp1";
+	Element.setStyle($("f1"),{display:'block'});
+	Element.setStyle($("cse-search-box"),{display:'none'});
+
+
+
+	new ZAC.AutoComplete($$(".q")[0], function() {
+	var tp_temp=$F("tp");
+	var lb='&lb=';
+	
+	if (tp_temp == 'tp2'){lb='&lb='+getRadioBoxValue('lb_a')};
+	if (tp_temp == 'tp3'){lb='&lb='+getRadioBoxValue('lb_b')};
+	if (tp_temp == 'tp4'){lb='&lb='+getRadioBoxValue('lb_c')};
+
+	return "/sousuo/ac/?q=" + escape($F($$(".q")[0])) + "&tp=" + $F("tp") +lb;
+	},{minChars:1,width:'400px'});
+	
+})
+,false);
+
+function $S() {       
+  var results = [], element;        
+  for (var i = 0; i < arguments.length; i++) { 
+	element = arguments[i];         
+	if (typeof element == 'string')           
+	  element = document.getElementsByName(element);       
+	  results.push(Element.extend(element));
+  }      
+  return results.length < 2 ? results[0] : results;      
+} 
+
+function getRadioBoxValue(radioName) {  
+	var obj = $S(radioName);
+	for(var i = 0; i < obj.length; i++){  
+	if(obj[i].checked){
+		return obj[i].value;
+		}  
+	}
+	return "undefined";        
+}
+
+function g(formname)	{
+var url = "http://www.baidu.com/baidu";
+if (formname.s[1].checked) {
+	formname.ct.value = "2097152";
+}
+else {
+	formname.ct.value = "0";
+}
+formname.action = url;
+return true;
+}
+ </script>
+</div>
+<DIV class="notice">
+<h3>搜索结果：</h3>抱歉，汉典暂未收录“周族”。
+<p><span style="color:#FFF">-151-</span></p>
+</DIV>
+<DIV class="ga"></div>
+<DIV>
+<script language="javascript" src="/js/creativecommons.js" type="text/javascript"></script>
+</DIV>
+</DIV>
+</DIV>
+<DIV id=sidebar>
+<UL>
+<script type="text/javascript" src="/js/hdgy.js"></script>
+<script language="javascript" src="/js/cd_s3.js" type="text/javascript"></script>
+</UL>
+</DIV>
+<script type="text/javascript" src="/js/foot.js"></script>
+</DIV>
+</BODY>
+</HTML>
