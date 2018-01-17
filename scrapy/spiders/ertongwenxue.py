@@ -52,4 +52,9 @@ class TOM61(scrapy.Spider):
         category = response.meta['category']
         title = response.xpath('//div[@class="t_news"]/h1/text()').extract_first()
         text = '\n'.join(response.xpath('//div[@class="t_news_txt"]/p/text()').extract())
-        yield {'category': category, 'title': title, 'url': response.url, 'text': text}
+        # print(father)
+        # exit()
+        fw = codecs.open('result2/'+title , 'w' , 'utf8')
+        fw.write(text)
+        fw.close()
+        # yield {'category': category, 'title': title, 'url': response.url, 'text': text}
